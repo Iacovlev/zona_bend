@@ -1,4 +1,4 @@
 export interface Areas {
-    areaId: number,
-    name: string
+  areaId: number;
+  name: string;
 }
