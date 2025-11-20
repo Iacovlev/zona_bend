@@ -1,1 +1,18 @@
-<p>module-1 works!</p>
+<div style="display: flex; flex-direction: column;" class="row">
+    <div style="display: flex; flex-direction: column;" *ngFor="let area of areas">
+        <p>{{area.name}}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <div class="group" *ngFor="let group of area.nodes">
+                <div class="item">
+                    <span [style.background-color]="group.status" class="line"></span>
+                    <span>{{ group.sku }}</span>
+                    <span class="defaultSku">{{ group.defaultSku }}</span>
+                </div>
+                <div class="item" *ngFor="let thing of group.children">
+                    <span>{{ thing.sku }}</span>
+                    <span class="defaultSku">{{ thing.defaultSku }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
